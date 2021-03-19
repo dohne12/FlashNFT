@@ -12,7 +12,7 @@ import { Header, Account, Faucet, Ramp, Contract, GasGauge, ThemeSwitch } from "
 import { Transactor } from "./helpers";
 import { formatEther, parseEther } from "@ethersproject/units";
 //import Hints from "./Hints";
-import { Hints, ExampleUI, Subgraph, MintToken } from "./views"
+import { Hints, ExampleUI, Subgraph } from "./views"
 import { useThemeSwitcher } from "react-css-theme-switcher";
 import { INFURA_ID, DAI_ADDRESS, DAI_ABI, NETWORK, NETWORKS } from "./constants";
 /*
@@ -225,9 +225,6 @@ function App(props) {
           <Menu.Item key="/subgraph">
             <Link onClick={()=>{setRoute("/subgraph")}} to="/subgraph">Subgraph</Link>
           </Menu.Item>
-          <Menu.Item key="/mintToken">
-            <Link onClick={()=>{setRoute("/mintToken")}} to="/mintToken">MintToken</Link>
-          </Menu.Item>
         </Menu>
 
         <Switch>
@@ -309,21 +306,12 @@ function App(props) {
             mainnetProvider={mainnetProvider}
             />
           </Route>
-          <Route path="/mintToken">
+          <Rout path="/mintToken">
             <MintToken
-             address={address}
-             userProvider={userProvider}
-             mainnetProvider={mainnetProvider}
-             localProvider={localProvider}
-             yourLocalBalance={yourLocalBalance}
-             price={price}
-             tx={tx}
-             writeContracts={writeContracts}
-             readContracts={readContracts}
-             purpose={purpose}
-             setPurposeEvents={setPurposeEvents}
+             
+            
             />
-          </Route>
+          </Rout>
         </Switch>
       </BrowserRouter>
 

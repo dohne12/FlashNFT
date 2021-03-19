@@ -4,15 +4,14 @@ pragma solidity >=0.6.0 <0.9.0;
 import "hardhat/console.sol";
 //import "@openzeppelin/contracts/access/Ownable.sol"; //https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
 
-contract YourContract {
+contract FlashNFT {
 
   event SetPurpose(address sender, string purpose);
 
-  string public purpose = "Terrible default contract";
+  string public purpose = "Building Unstoppable Apps";
 
   constructor() {
     // what should we do on deploy?
-    console.log("can't even change this without breaking everything");
   }
 
   function setPurpose(string memory newPurpose) public {

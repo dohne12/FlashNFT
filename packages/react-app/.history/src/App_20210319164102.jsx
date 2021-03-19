@@ -225,9 +225,6 @@ function App(props) {
           <Menu.Item key="/subgraph">
             <Link onClick={()=>{setRoute("/subgraph")}} to="/subgraph">Subgraph</Link>
           </Menu.Item>
-          <Menu.Item key="/mintToken">
-            <Link onClick={()=>{setRoute("/mintToken")}} to="/mintToken">MintToken</Link>
-          </Menu.Item>
         </Menu>
 
         <Switch>
