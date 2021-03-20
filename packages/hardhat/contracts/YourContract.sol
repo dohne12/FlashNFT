@@ -8,11 +8,10 @@ contract YourContract {
 
   event SetPurpose(address sender, string purpose);
 
-  string public purpose = "Terrible default contract";
+  string public purpose = "Building Unstoppable Apps";
 
   constructor() {
     // what should we do on deploy?
-    console.log("can't even change this without breaking everything");
   }
 
   function setPurpose(string memory newPurpose) public {

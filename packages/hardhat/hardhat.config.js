@@ -22,9 +22,6 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 // Select the network you want to deploy to here:
 //
 const defaultNetwork = "localhost";
-// const defaultNetwork = "goerli";
-// const defaultNetwork = "localhost";
-// const defaultNetwork = "localhost";
 
 function mnemonic() {
   try {
@@ -78,7 +75,7 @@ module.exports = {
       },
     },
     goerli: {
-      url: "https://goerli.infura.io/v3/e4a2c9acd64b4a2c9fab8e52a2a381b7", //<---- YOUR INFURA ID! (or it won't work)
+      url: "https://goerli.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad", //<---- YOUR INFURA ID! (or it won't work)
       accounts: {
         mnemonic: mnemonic(),
       },
@@ -124,7 +121,7 @@ module.exports = {
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: "K89BP9F32IG5HD1WCK6A1T9CCEPZSNV8RE"
+    apiKey: "PSW8C433Q667DVEX5BCRMGNAH9FSGFZ7Q8"
   }
 };
 
