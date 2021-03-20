@@ -125,15 +125,15 @@ function App(props) {
 
   // keep track of a variable from the contract in the local React state:
   // const purpose = useContractReader(readContracts,"YourContract", "purpose")
-  const purpose = useContractReader(readContracts, "FlashNFT", "purpose")
-  const mediaType = useContractReader(readContracts, "FlashNFT", "mediaType")
-  console.log("🤗 purpose:",purpose)
-  console.log("mediaType", mediaType)
+  // const purpose = useContractReader(readContracts, "FlashNFT", "purpose")
+  // const mediaType = useContractReader(readContracts, "FlashNFT", "mediaType")
+  // console.log("🤗 purpose:",purpose)
+  // console.log("mediaType", mediaType)
 
   //📟 Listen for broadcast events
   // const setPurposeEvents = useEventListener(readContracts, "YourContract", "SetPurpose", localProvider, 1);
-  const setPurposeEvents = useEventListener(readContracts, "FlashNFT", "SetPurpose", localProvider, 1);
-  console.log("📟 SetPurpose events:",setPurposeEvents)
+  // const setPurposeEvents = useEventListener(readContracts, "FlashNFT", "SetPurpose", localProvider, 1);
+  // console.log("📟 SetPurpose events:",setPurposeEvents)
 
   /*
   const addressFromENS = useResolveName(mainnetProvider, "austingriffith.eth");
@@ -239,7 +239,7 @@ function App(props) {
             */}
 
             <Contract
-              name="YourContract"
+              name="FlashNFT"
               signer={userProvider.getSigner()}
               provider={localProvider}
               address={address}
@@ -287,8 +287,8 @@ function App(props) {
               tx={tx}
               writeContracts={writeContracts}
               readContracts={readContracts}
-              purpose={purpose}
-              setPurposeEvents={setPurposeEvents}
+              // purpose={purpose}
+              // setPurposeEvents={setPurposeEvents}
             />
           </Route>
           <Route path="/mainnetdai">
@@ -320,8 +320,8 @@ function App(props) {
              tx={tx}
              writeContracts={writeContracts}
              readContracts={readContracts}
-             purpose={purpose}
-             setPurposeEvents={setPurposeEvents}
+            //  purpose={purpose}
+            //  setPurposeEvents={setPurposeEvents}
             />
           </Route>
         </Switch>
