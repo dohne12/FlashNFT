@@ -40,7 +40,7 @@ const Index = ({ signerAddress, contract_1155, contract_721, networkId }) => {
       </Modal>
       <div className={classes.title}>
         <Typography variant="h3" style={{ marginBottom: 5 }}>NFT Minter</Typography>
-        <Typography variant="h6" style={{ opacity: 0.5 }}>Mint ERC721 or ERC1155 standard tokens on Polygon (Previously Matic Network) </Typography>
+        <Typography variant="h6" style={{ opacity: 0.5 }}>Mint NFTs on Polygon (erc721 and erc1155) </Typography>
       </div>
       {
         trsHash && <Typography variant="h6" style={{ marginBottom: 15 }}>
