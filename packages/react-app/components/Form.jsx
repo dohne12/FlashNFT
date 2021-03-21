@@ -20,6 +20,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
 
   // hooks
   const [name, setName] = useState('');
+  const [edition, setEdition] = useState('');
   const [desc, setDesc] = useState('');
   const [surl, setSurl] = useState('');
   const [file, setFile] = useState(null);
@@ -36,6 +37,13 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
   const validateName = () => {
     if (name === "") {
       setErrors(pS => ({ ...pS, name: 'Name cannot be empty' }))
+    } else {
+      setErrors(pS => ({ ...pS, name: '' }))
+    }
+  }
+  const validateEdition = () => {
+    if (edition === "") {
+      setErrors(pS => ({ ...pS, name: 'Edition cannot be empty' }))
     } else {
       setErrors(pS => ({ ...pS, name: '' }))
     }
@@ -80,7 +88,8 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
         name: name,
         description: desc,
         image: 'https://gateway.pinata.cloud/ipfs/' + imgHash,
-        external_url: surl
+        external_url: surl,
+        attributes: [{"trait_type": "edition", "value": edition}]
       })
       toast("JSON data uploaded to IPFS", { type: "success" });
       console.log(ipfsHash)
@@ -189,6 +198,24 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
           onChange={(e) => setSurl(e.target.value)}
         />
       </div>
+      <div className={classes.formGroup}>
+        <label className={classes.formGroupLabel}>Attribute</label>
+        <input
+          type="text"
+          style={{ border: errors.name ? '1px solid tomato' : '1px solid black' }}
+          placeholder="Edition"
+          className={classes.formGroupInput}
+          value={edition}
+          onChange={(e) => {
+            setEdition(e.target.value);
+            setErr('')
+            setErrors(pS => ({ ...pS, name: '' }))
+          }}
+          onBlur={validateEdition}
+          required
+        />
+        {errors.name && <p className={classes.error}>{errors.name}</p>}
+      </div>
 
       <div className={classes.endCont}>
 
@@ -236,10 +263,16 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
             />
           </div>}
         </div>
-
       </div>
 
-      <Button type="submit" className={classes.submit}>Submit</Button>
+      <Button type="submit" className={classes.submit}>Mint</Button>
+      <br/>
+      <br/>
+      <Button
+      className={classes.typeButton} 
+      onClick={() => window.open("https://sample-sandbox.circle.com/", "_blank")}
+      disabled={false}
+      >Pay gas with credit card</Button>
     </form>
   );
 }
