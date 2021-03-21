@@ -69,6 +69,11 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
       setTrsHash('');
 
       const imgHash = await pinFileToIPFS(file);
+      // show image is undefined and cancel TODO
+      //if(imgHash=='undefined'){
+      //  setErr("File undefined");
+      //}
+
       toast("File uploaded to IPFS", { type: "success" });
 
       const ipfsHash = await pinJSONToIPFS({
@@ -190,7 +195,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
         <div className={classes.formGroup} style={{ margin: '0.5rem 0' }}>
           <label className={classes.formGroupLabel}>Add Logo for your NFT</label>
           <div className={classes.formGroupFile}>
-            <input accept="image/*" id="upload-company-logo" onChange={handleFile} type='file' hidden />
+            <input accept="image/*, audio/*, video/*" id="upload-company-logo" onChange={handleFile} type='file' hidden />
             <label htmlFor="upload-company-logo">
               <Button component="span" >
                 <Paper elevation={5}>
