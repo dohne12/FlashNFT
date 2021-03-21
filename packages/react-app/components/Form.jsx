@@ -143,7 +143,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
   return (
     <form className={classes.root} noValidate autoComplete="off" onSubmit={onSubmit}>
       <div className={classes.formGroup}>
-        <label className={classes.formGroupLabel}>Name of NFT</label>
+        <label className={classes.formGroupLabel}>NFT Name</label>
         <input
           type="text"
           style={{ border: errors.name ? '1px solid tomato' : '1px solid black' }}
@@ -179,7 +179,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
         {errors.desc && <p className={classes.error}>{errors.desc}</p>}
       </div>
       <div className={classes.formGroup}>
-        <label className={classes.formGroupLabel}>Social Media URL (optional)</label>
+        <label className={classes.formGroupLabel}>Social Media (optional)</label>
         <input
           type="url"
           placeholder="https://twitter.com/example"
@@ -193,7 +193,7 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
       <div className={classes.endCont}>
 
         <div className={classes.formGroup} style={{ margin: '0.5rem 0' }}>
-          <label className={classes.formGroupLabel}>Add Logo for your NFT</label>
+          <label className={classes.formGroupLabel}>Add audio, video or image</label>
           <div className={classes.formGroupFile}>
             <input accept="image/*, audio/*, video/*" id="upload-company-logo" onChange={handleFile} type='file' hidden />
             <label htmlFor="upload-company-logo">
@@ -215,13 +215,13 @@ const Form = ({ signerAddress, setIsLoading, setTrsHash, setErr, networkId, setO
               disabled={nftType === 'ERC721' ? true : false}
               onClick={() => setNftType('ERC721')}
             >
-              ERC721
+             Single - ERC721
           </Button>
             <Button className={classes.typeButton}
               disabled={nftType === 'ERC1155' ? true : false}
               onClick={() => setNftType('ERC1155')}
             >
-              ERC1155
+            Multiple - ERC1155
             </Button>
           </div>
 
