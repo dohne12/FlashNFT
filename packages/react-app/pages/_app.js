@@ -45,7 +45,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <React.Fragment>
       <Head>
-        <title>Polygon NFT Minter</title>
+        <title>Flash NFT</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={muiTheme}>
